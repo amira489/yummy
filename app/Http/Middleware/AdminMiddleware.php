@@ -20,7 +20,7 @@ class AdminMiddleware
         }
 
         if (Auth::user()->role !== 'admin') {
-            return redirect()->route('home')->with('error', 'Vous n\'avez pas les droits d\'accès nécessaires.');
+            return redirect('/')->with('error', 'Accès non autorisé');
         }
 
         return $next($request);
